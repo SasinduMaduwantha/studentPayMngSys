@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import logo from "../src/assets/logoM.png";
+import './App.css';
 
 export default function StaffLogin() {
   const [username, setUsername] = useState('');
@@ -37,7 +39,10 @@ export default function StaffLogin() {
 
   return (
     <div className="App">
-      <h2>Medical Faculty Student Payment Management System</h2>
+       <nav className="login-navbar">
+          <img src={logo} alt="Logo" className="login-logo" />
+          <h2>Medical Faculty Student Payment Management System</h2>
+          </nav>
       <header className="App-header">
         <h1>Staff Login</h1>
         <form className="login-form" onSubmit={handleSubmit}>

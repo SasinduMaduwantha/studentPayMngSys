@@ -1,35 +1,67 @@
 .App {
   text-align: center;
   background: url("./assets/fac1.png") no-repeat center center / cover;
-  height: 100vh;
+  min-height: 100vh; /* use min-height instead of fixed height */
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px; /* padding for small screens */
+  box-sizing: border-box;
+}
+
+/* Navigation Bar */
+.login-navbar {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #1f5b77;
+  color: white;
+  padding: 8px 30px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  z-index: 1000;
+  display: flex;           /* use flexbox */
+  align-items: center;     /* vertically center */
+  gap: 15px;               /* space between logo and heading */
+}
+
+.login-navbar h2 {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+/* Logo */
+.login-logo {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid white;
+}
+
+.login-user{
+  display: flex;
+  gap: 15px;             /* space between image and text */
+  align-items: flex-start;
 }
 
 
-
+/* Login box */
 .App-header {
+  margin-top: 30px;
   position: relative;
   background: white;
-  padding: 40px 60px;
+  padding: 20px 60px;
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  width: 320px;
+  width: 100%;       /* allow full width on small screens */
+  max-width: 450px;  /* limit max width on large screens */
+  box-sizing: border-box;
 }
 
-h2 {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  margin: 0;
-  color: #047028;
-  font-weight: 700;
-  font-size: 1.2rem;
-}
-
-
+/* Headings */
 h1 {
   margin-bottom: 30px;
   color: #0072b1;
@@ -37,11 +69,11 @@ h1 {
   font-size: 1.8rem;
 }
 
-
+/* Form */
 .login-form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 10px;
 }
 
 .login-form label {
@@ -52,7 +84,7 @@ h1 {
 }
 
 .login-form input {
-  padding: 12px 15px;
+  padding: 12px 10px;
   border: 1.8px solid #0072b1;
   border-radius: 8px;
   font-size: 1rem;
@@ -67,6 +99,7 @@ h1 {
 
 .login-form button {
   margin-top: 10px;
+  margin-bottom: 15px;
   background-color: #0072b1;
   color: white;
   padding: 12px 0;
@@ -95,4 +128,19 @@ p a {
 
 p a:hover {
   text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .App-header {
+    padding: 30px 20px; /* reduce padding on small screens */
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .login-navbar h2 {
+    font-size: 1rem;
+  }
 }

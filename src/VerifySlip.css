@@ -1,0 +1,146 @@
+/* VerifySlip.css */
+
+.verify-slip-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 40px auto;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.verify-slip-container h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #2c3e50;
+}
+
+/* Table styling */
+.slip-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.slip-table th,
+.slip-table td {
+  border: 1px solid #ddd;
+  padding: 12px 15px;
+  text-align: center;
+}
+
+.slip-table th {
+  background-color: #3498db;
+  color: #fff;
+  font-weight: 600;
+}
+
+.slip-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.slip-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.slip-table tr.uploaded {
+  background-color: #e8f8f5; /* Light teal for uploaded */
+}
+
+.slip-table tr.pending {
+  background-color: #fcf3cf; /* Light yellow for pending */
+}
+
+.slip-table tr.approved {
+  background-color: #d4edda; /* Light green for approved */
+}
+
+.slip-table tr.rejected {
+  background-color: #f8d7da; /* Light red for rejected */
+}
+
+/* Buttons */
+.slip-table button {
+  padding: 6px 12px;
+  margin: 0 2px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s ease-in-out;
+}
+
+.slip-table button:hover {
+  opacity: 0.8;
+}
+
+.slip-table button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.slip-table button:first-of-type {
+  background-color: #3498db;
+  color: #fff;
+}
+
+/* Overlay for viewing slip */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.overlay-content {
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 600px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+.overlay-content h3 {
+  margin-bottom: 15px;
+}
+
+.overlay-content img {
+  margin-top: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+}
+
+.close-btn:hover {
+  color: #e74c3c;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .slip-table th, .slip-table td {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .overlay-content {
+    padding: 15px;
+  }
+}

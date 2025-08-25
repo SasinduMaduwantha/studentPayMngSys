@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import logo from "../src/assets/logoM.png"; 
+import './App.css';
 
 export default function StudentLogin() {
   const [registrationNo, setRegistrationNo] = useState("");
@@ -34,7 +36,12 @@ export default function StudentLogin() {
 
   return (
     <div className="App">
-      <h2>Medical Faculty Student Payment Management System</h2>
+       <div className="login-user">
+      <nav className="login-navbar">
+    <img src={logo} alt="Logo" className="login-logo" />
+    <h2>Medical Faculty Student Payment Management System</h2>
+    </nav>
+      </div>
       <header className="App-header">
         <h1>Student Login</h1>
         <form className="login-form" onSubmit={handleSubmit}>
